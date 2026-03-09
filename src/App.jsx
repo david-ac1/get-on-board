@@ -14,15 +14,15 @@ function App() {
     };
 
     return (
-        <div className="app-container">
+        <div className="app-shell">
             <AppShell currentView={currentView} onNavigate={setCurrentView} />
-            <main className="main-content">
+            <main className="main-container">
                 {currentView === 'dashboard' ? (
                     <Dashboard onSelectWorkflow={() => setCurrentView('workflow')} />
                 ) : (
                     <WorkflowView
                         onBack={() => setCurrentView('dashboard')}
-                        onComplete={() => showNotification('Survival Guide Generated!')}
+                        onComplete={() => showNotification('Survival Guide Generated! Sent to Alex Mariner.')}
                     />
                 )}
             </main>

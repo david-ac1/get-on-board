@@ -1,37 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Serif:opsz,wght@8..144,400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
 :root {
-  /* Material 3 / Modern Nautical Design Tokens */
-  --md-sys-color-primary: #2C3E50; /* Deep Steel Blue */
-  --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-primary-container: #d9e2ff;
-  --md-sys-color-on-primary-container: #001945;
-  
-  --md-sys-color-secondary: #FF6F61; /* Vibrant Coral */
-  --md-sys-color-on-secondary: #ffffff;
-  --md-sys-color-secondary-container: #ffdad5;
-  --md-sys-color-on-secondary-container: #410002;
-  
-  --md-sys-color-tertiary: #4F6354; /* Olive Branch Green */
-  --md-sys-color-on-tertiary: #ffffff;
-  
-  --md-sys-color-surface: #fdfbff;
-  --md-sys-color-on-surface: #1a1c1e;
-  --md-sys-color-surface-variant: #e0e2ec;
-  --md-sys-color-on-surface-variant: #44474e;
-  
-  --md-sys-color-outline: #74777f;
-  
-  /* Typography */
-  --md-sys-typescale-header-font: 'Roboto Serif', serif;
-  --md-sys-typescale-body-font: 'Roboto Flex', sans-serif;
-  
-  /* Spacing & Elevation */
-  --md-sys-spacing-unit: 8px;
-  --md-sys-elevation-1: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
-  --md-sys-elevation-2: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
-  
-  /* Nautical Specifics */
-  --nautical-horizon-height: 4px;
-  --nautical-horizon-bg: #e0e0e0;
+  /* Design Truth Tokens */
+  --primary: #1773cf;
+  --accent: #FF7F50;
+  --coral: #FF7F50;
+  --background-light: #f6f7f8;
+  --background-dark: #111921;
+  --steel-blue: #4e7397;
+  --slate-850: #1e293b;
+
+  /* Fonts */
+  --font-display: 'Inter', sans-serif;
+  --font-serif-title: 'Roboto Serif', serif;
+
+  /* Elevations & Glass */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-blur: blur(12px);
 }
 
 * {
@@ -41,68 +28,120 @@
 }
 
 body {
-  font-family: var(--md-sys-typescale-body-font);
-  background-color: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-display);
+  background-color: var(--background-light);
+  color: #0f172a;
+  /* slate-900 */
+  min-h: 100vh;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, .ark-title {
-  font-family: var(--md-sys-typescale-header-font);
+.nautical-bg {
+  background-color: var(--background-light);
+  background-image: radial-gradient(#d1d5db 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
 }
 
-/* Base Layout Helpers */
-.app-container {
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+}
+
+.progress-gradient {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.chart-path {
+  background-image: repeating-linear-gradient(90deg, var(--primary) 0, var(--primary) 10px, transparent 10px, transparent 20px);
+}
+
+/* Material Symbols Utility */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+/* Common Layout */
+.app-shell {
   display: flex;
   height: 100vh;
-  width: 100vw;
   overflow: hidden;
 }
 
-.main-content {
+.main-container {
   flex: 1;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  background-color: var(--md-sys-color-surface);
+  position: relative;
 }
 
-/* Material 3 Utilities */
-.elevated-card {
-  background: white;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: var(--md-sys-elevation-1);
-  transition: box-shadow 0.2s ease-in-out;
+/* Typography */
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif-title);
+  letter-spacing: -0.025em;
 }
 
-.elevated-card:hover {
-  box-shadow: var(--md-sys-elevation-2);
+.text-primary {
+  color: var(--primary);
 }
 
-.primary-button {
-  background-color: var(--md-sys-color-primary);
-  color: var(--md-sys-color-on-primary);
+.text-accent {
+  color: var(--accent);
+}
+
+.text-steel-blue {
+  color: var(--steel-blue);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
   border: none;
-  border-radius: 20px;
-  padding: 10px 24px;
-  font-weight: 500;
   cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(23, 115, 207, 0.3);
+  transition: all 0.2s;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.secondary-button {
-  background-color: var(--md-sys-color-secondary);
-  color: var(--md-sys-color-on-secondary);
+.btn-primary:hover {
+  box-shadow: 0 20px 25px -5px rgba(23, 115, 207, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
   border: none;
-  border-radius: 20px;
-  padding: 10px 24px;
-  font-weight: 500;
   cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(255, 127, 80, 0.3);
+  transition: all 0.2s;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.btn-secondary {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
 }
