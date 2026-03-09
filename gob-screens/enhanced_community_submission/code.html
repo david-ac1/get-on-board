@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publish to Fleet | Get On Board!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1773cf", // Deep Steel Blue
+                        "accent": "#ff6b6b",  // Vibrant Coral
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .nautical-texture {
+            background-color: #f6f7f8;
+            background-image: radial-gradient(#1773cf1a 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .dark .nautical-texture {
+            background-color: #111921;
+            background-image: radial-gradient(#1773cf33 1px, transparent 0);
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden nautical-texture">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary text-white rounded-lg">
+<span class="material-symbols-outlined">sailing</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Get On Board!</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+<img alt="User avatar" class="h-full w-full object-cover" data-alt="Profile picture of a ship captain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnuUzGxESluxfJuybCjBPxg3YfCtdy7BfmOgJcd1fVDexmikDW8P1fVzZahien1CVEalKX7LPiik9xTWnpCPEgfND_JBcI7viM5mgh6guNKnJpP73Nzb4Ii9fpxTsfIyBq8R_Al9Fk_fy0dhd1ixeIgQXCljjMUeSQ_g7nC_La9nd8INUnOD6-S5gpLouSE8F5awVUgAk6dB0Fruo_yB7RfQP5GYY-sMXONsUECy6rfHgD0Rh3uZ0G3_nKIMbexRFu6laTOyvvksc"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center py-8 px-4 md:px-10">
+<div class="max-w-5xl w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<nav class="flex items-center gap-2 text-sm text-primary font-medium mb-1">
+<span>Fleet</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-500">Publish</span>
+</nav>
+<h1 class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-tight">Publish to Fleet</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Cast your net wide. Share your onboarding template with the global maritime community.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Form Column -->
+<div class="lg:col-span-2 space-y-6">
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                                Template Details
+                            </h3>
+<div class="space-y-5">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Template Title</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all p-3" placeholder="e.g. Senior Deck Officer Orientation" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Category</label>
+<select class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all p-3">
+<option>Engineering</option>
+<option>Navigation</option>
+<option>Hospitality</option>
+<option>Safety &amp; Security</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Difficulty Level</label>
+<select class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all p-3">
+<option>Apprentice</option>
+<option>Intermediate</option>
+<option>Expert</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Voyage Description</label>
+<textarea class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all p-3" placeholder="Describe the journey and goals of this onboarding..." rows="4"></textarea>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">visibility</span>
+                                Visibility Settings
+                            </h3>
+<div class="flex flex-col gap-4">
+<label class="flex items-center gap-4 p-4 border border-slate-200 dark:border-slate-700 rounded-lg cursor-pointer hover:bg-primary/5 transition-colors">
+<input checked="" class="text-primary focus:ring-primary h-5 w-5" name="visibility" type="radio"/>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Public Fleet</p>
+<p class="text-sm text-slate-500">Visible to all captains in the community. Open for collaboration.</p>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-slate-200 dark:border-slate-700 rounded-lg cursor-pointer hover:bg-primary/5 transition-colors">
+<input class="text-primary focus:ring-primary h-5 w-5" name="visibility" type="radio"/>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Private Vessel</p>
+<p class="text-sm text-slate-500">Only visible to your crew members and organization.</p>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Sidebar / Preview Column -->
+<div class="lg:col-span-1 space-y-6">
+<div class="sticky top-24">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4 px-1">Live Preview</h3>
+<!-- Preview Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-xl border-t-4 border-primary">
+<div class="h-32 bg-primary/10 flex items-center justify-center relative">
+<span class="material-symbols-outlined text-5xl text-primary/40">anchor</span>
+<div class="absolute top-3 right-3 bg-accent text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">New Voyage</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">folder</span>
+<span class="text-xs font-bold text-primary uppercase">Engineering</span>
+</div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-tight">Senior Deck Officer Orientation</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mb-4">Complete guide for incoming officers covering safety protocols, navigational charts, and team leadership...</p>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2">
+<div class="h-6 w-6 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden">
+<img alt="Author" class="h-full w-full object-cover" data-alt="Small round user profile image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJF4XITFYgNsoA2MIAW3j5uY9wYuODevGnVE5ceQXgBWGVy2uhCYhfepCYWtAn7CQfcN4lZjY6oc4RbRoB1yNGCe-bEkxd-L0OEpjPQx80KcnSjV-CTXOYDP9w4oixeUnjPe-R_Aqe2DksxxaJ5zorv7XJvcUUlFQAoaLPluezsEyCXfBb2G40k85B1IrrgwMfcUb3iUmWjuhmUzcA5Hy_MUAVOMPLAIiLwBYZaE0CfRYtIHLengcKaK37SiATC4Qo_EFn6BVcK5w"/>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Capt. H. Miller</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-xs">Just now</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-8 space-y-4">
+<button class="w-full flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-95 group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">anchor</span>
+                                    Approve &amp; Weigh Anchor
+                                </button>
+<div class="bg-primary/5 border border-primary/20 rounded-lg p-4 flex gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        Once published, your crew will be notified. Your notification icon will change to a <span class="font-bold text-primary inline-flex items-center gap-1">Dove with Olive Branch <span class="material-symbols-outlined text-sm">nest_eco_leaf</span></span> to signal a peaceful deployment.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-12 py-8 border-t border-primary/10 px-10 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-slate-500 text-sm">© 2024 Get On Board! – Smooth sailing for every new recruit.</p>
+<div class="flex gap-6 text-slate-400 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Port Authority</a>
+<a class="hover:text-primary transition-colors" href="#">Maritime Laws</a>
+<a class="hover:text-primary transition-colors" href="#">Help Buoy</a>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

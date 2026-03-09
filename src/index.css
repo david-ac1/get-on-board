@@ -1,0 +1,108 @@
+:root {
+  /* Material 3 / Modern Nautical Design Tokens */
+  --md-sys-color-primary: #2C3E50; /* Deep Steel Blue */
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #d9e2ff;
+  --md-sys-color-on-primary-container: #001945;
+  
+  --md-sys-color-secondary: #FF6F61; /* Vibrant Coral */
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ffdad5;
+  --md-sys-color-on-secondary-container: #410002;
+  
+  --md-sys-color-tertiary: #4F6354; /* Olive Branch Green */
+  --md-sys-color-on-tertiary: #ffffff;
+  
+  --md-sys-color-surface: #fdfbff;
+  --md-sys-color-on-surface: #1a1c1e;
+  --md-sys-color-surface-variant: #e0e2ec;
+  --md-sys-color-on-surface-variant: #44474e;
+  
+  --md-sys-color-outline: #74777f;
+  
+  /* Typography */
+  --md-sys-typescale-header-font: 'Roboto Serif', serif;
+  --md-sys-typescale-body-font: 'Roboto Flex', sans-serif;
+  
+  /* Spacing & Elevation */
+  --md-sys-spacing-unit: 8px;
+  --md-sys-elevation-1: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
+  --md-sys-elevation-2: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
+  
+  /* Nautical Specifics */
+  --nautical-horizon-height: 4px;
+  --nautical-horizon-bg: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--md-sys-typescale-body-font);
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .ark-title {
+  font-family: var(--md-sys-typescale-header-font);
+}
+
+/* Base Layout Helpers */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--md-sys-color-surface);
+}
+
+/* Material 3 Utilities */
+.elevated-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--md-sys-elevation-1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.elevated-card:hover {
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.primary-button {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.secondary-button {
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
